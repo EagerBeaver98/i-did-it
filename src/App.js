@@ -25,7 +25,7 @@ function App() {
     </header>
       <div className='seperator'></div>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <UnderConstruction />
         </Route>
         <Route path="/about">
