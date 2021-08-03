@@ -5,6 +5,7 @@ function Header() {
       <ul className="HeaderItems">
         <li className="Title">I DID It</li>
         <li>About DID</li>
+        <li>Forum</li>
       </ul>
       
     </header>
