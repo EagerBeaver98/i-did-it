@@ -1,13 +1,18 @@
 
 header {
   display: flex;
-  justify-content: flex-start;
-  .HeaderItems {
+  position: fixed;
+  nav .HeaderItems {
+    display: flex;
     justify-content: space-around;
     flex-direction: row;
     list-style: none;
-    .Title {
-      font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    width: auto;
+    li {
+      align-items: center;
+      width: auto;
+      margin: 10px;
     }
   }
 }
