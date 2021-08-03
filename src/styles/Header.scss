@@ -2,8 +2,8 @@
 header {
   display: flex;
   position: fixed;
-  .HeaderItems {
-    display: inherit;
+  nav .HeaderItems {
+    display: flex;
     justify-content: space-around;
     flex-direction: row;
     list-style: none;
