@@ -1,12 +1,13 @@
 import Header from './components/Header';
 import Hello from './components/HelloWorld';
-import './styles/App.css';
+import UnderConstruction from './components/UnderConstruction';
+
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Hello />
+      <UnderConstruction />
       
     </div>
   );

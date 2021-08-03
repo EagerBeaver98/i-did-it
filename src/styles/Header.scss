@@ -1,6 +1,7 @@
 
 header {
   display: flex;
+  position: fixed;
   .HeaderItems {
     display: inherit;
     justify-content: space-around;
