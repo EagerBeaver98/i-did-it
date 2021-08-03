@@ -2,7 +2,7 @@ function Header() {
   return (
     <header>
       <ul className="HeaderItems">
-        <li className="Title">I DID It</li>
+        <li>I DID It</li>
         <li>About DID</li>
         <li>Forum</li>
       </ul>
