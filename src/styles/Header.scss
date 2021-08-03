@@ -1,3 +1,13 @@
-.Title{
-  font-family: Arial, Helvetica, sans-serif;
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  .HeaderItems {
+    justify-content: space-around;
+    flex-direction: row;
+    list-style: none;
+    .Title {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
 }
