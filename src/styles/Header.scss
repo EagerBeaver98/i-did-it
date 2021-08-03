@@ -9,11 +9,10 @@ header {
     list-style: none;
     align-items: center;
     width: auto;
-    .Title {
-      font-family: Arial, Helvetica, sans-serif;
-    }
     li {
-      padding-right: 2%;
+      align-items: center;
+      width: auto;
+      margin: 10px;
     }
   }
 }
