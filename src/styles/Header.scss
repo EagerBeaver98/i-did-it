@@ -1,7 +1,7 @@
 
 header {
   display: flex;
-  position: fixed;
+  justify-content: space-between;
   nav .HeaderItems {
     display: flex;
     justify-content: space-around;
@@ -11,6 +11,15 @@ header {
     width: auto;
     li {
       align-items: center;
+      width: auto;
+      margin: 10px;
+    }
+  }
+  .Profile .Alters{
+    justify-content: flex-end;
+    list-style: none;
+    display: flex;
+    li {
       width: auto;
       margin: 10px;
     }

@@ -2,6 +2,7 @@
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -22,6 +23,14 @@ function App() {
           </li>
         </ul>
       </nav>
+      <div className="Profile">
+        <ul className="Alters">
+          <li>Alter Name</li>
+          <li>
+            <Link to="/profile">Profile Name</Link>
+          </li>
+        </ul>
+      </div>
     </header>
       <div className='seperator'></div>
       <Switch>
@@ -33,6 +42,9 @@ function App() {
         </Route>
         <Route path="/forum">
           <UnderConstruction />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
       </Switch>
     </div>
