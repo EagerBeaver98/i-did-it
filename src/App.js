@@ -2,7 +2,6 @@
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import Profile from './components/Profile';
 
 
 function App() {
@@ -44,7 +43,6 @@ function App() {
           <UnderConstruction />
         </Route>
         <Route path="/profile">
-          <Profile />
         </Route>
       </Switch>
     </div>
