@@ -1,10 +1,16 @@
 // import Header from './components/Header';
+import {profile} from './data/temp data';
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
+import ProfilePage from './components/Profile';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [alter, setAlter] = useState(profile.alters[0].name);
+
   return (
     <Router>
     <div className="App">
@@ -24,9 +30,9 @@ function App() {
       </nav>
       <div className="Profile">
         <ul className="Alters">
-          <li>Alter Name</li>
+          <li>{alter}</li>
           <li>
-            <Link to="/profile">Profile Name</Link>
+            <Link to="/profile">{profile.name}</Link>
           </li>
         </ul>
       </div>
@@ -43,6 +49,7 @@ function App() {
           <UnderConstruction />
         </Route>
         <Route path="/profile">
+          <ProfilePage profile={profile}/>
         </Route>
       </Switch>
     </div>
