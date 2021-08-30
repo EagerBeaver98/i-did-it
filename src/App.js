@@ -5,6 +5,8 @@ import UnderConstruction from './components/UnderConstruction';
 import ProfilePage from './components/Profile';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { useState } from 'react';
+import { DropdownButton } from 'react-bootstrap';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
 function App() {
@@ -30,7 +32,13 @@ function App() {
       </nav>
       <div className="Profile">
         <ul className="Alters">
-          <li>{alter}</li>
+          <li>
+            <DropdownButton id="alter-dropdown" title={alter}>
+              {profile.alters.map(function(personality) {
+                return (<DropdownItem onClick={() => setAlter(personality.name)} >{personality.name}</DropdownItem>)
+              })}
+            </DropdownButton>
+          </li>
           <li>
             <Link to="/profile">{profile.name}</Link>
           </li>
