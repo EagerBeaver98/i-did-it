@@ -4,16 +4,20 @@ const profile = {id: 1, name: "Winniebean", alters: [{id: 1, name: "Winnie"}, {i
 const tweets = [{
   tweet: "I'm Drew",
   profileID: 1,
-  alterID: 2},
+  alterID: 2,
+  datetime: 1630442027288,
+  },
   {
     tweet: "I'm Winnie",
     profileID: 1,
-    alterID: 1
+    alterID: 1,
+    datetime: 1630442066400,
   },
   {
     tweet: "I'm Rosie",
     profileID: 1,
-    alterID: 3
+    alterID: 3,
+    datetime: 1630442133625,
   }
 ];
 
