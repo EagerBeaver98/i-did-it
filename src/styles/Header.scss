@@ -12,7 +12,9 @@ header {
     li {
       align-items: center;
       width: auto;
-      margin: 10px;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
     }
   }
   .Profile .Alters{
@@ -22,7 +24,9 @@ header {
     margin-right: 10%;
     li {
       width: auto;
-      margin: 10px;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

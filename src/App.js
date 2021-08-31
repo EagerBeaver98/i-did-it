@@ -35,7 +35,7 @@ function App() {
           <li>
             <DropdownButton id="alter-dropdown" title={alter}>
               {profile.alters.map(function(personality) {
-                return (<DropdownItem onClick={() => setAlter(personality.name)} >{personality.name}</DropdownItem>)
+                return (<DropdownItem key={personality.id} onClick={() => setAlter(personality.name)} >{personality.name}</DropdownItem>)
               })}
             </DropdownButton>
           </li>
