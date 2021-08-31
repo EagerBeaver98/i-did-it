@@ -1,11 +1,19 @@
 // import Header from './components/Header';
+import {profile} from './data/temp data';
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
+import ProfilePage from './components/Profile';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import Profile from './components/Profile';
+import { useState } from 'react';
+import { DropdownButton } from 'react-bootstrap';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
 function App() {
+
+  const [alter, setAlter] = useState(profile.alters[0].name);
+  const [alterID, setAlterID] = useState(profile.alters[0].id);
+
   return (
     <Router>
     <div className="App">
@@ -25,9 +33,18 @@ function App() {
       </nav>
       <div className="Profile">
         <ul className="Alters">
-          <li>Alter Name</li>
           <li>
-            <Link to="/profile">Profile Name</Link>
+            <DropdownButton id="alter-dropdown" title={alter}>
+              {profile.alters.map(function(personality) {
+                return (<DropdownItem key={personality.id} onClick={() => {
+                  setAlter(personality.name);
+                  setAlterID(personality.id);
+                }} >{personality.name}</DropdownItem>)
+              })}
+            </DropdownButton>
+          </li>
+          <li>
+            <Link to="/profile">{profile.name}</Link>
           </li>
         </ul>
       </div>
@@ -44,7 +61,7 @@ function App() {
           <UnderConstruction />
         </Route>
         <Route path="/profile">
-          <Profile />
+          <ProfilePage alterID={alterID} currentAlter={alter} profile={profile}/>
         </Route>
       </Switch>
     </div>
