@@ -12,6 +12,7 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 function App() {
 
   const [alter, setAlter] = useState(profile.alters[0].name);
+  const [alterID, setAlterID] = useState(profile.alters[0].id);
 
   return (
     <Router>
@@ -35,7 +36,10 @@ function App() {
           <li>
             <DropdownButton id="alter-dropdown" title={alter}>
               {profile.alters.map(function(personality) {
-                return (<DropdownItem key={personality.id} onClick={() => setAlter(personality.name)} >{personality.name}</DropdownItem>)
+                return (<DropdownItem key={personality.id} onClick={() => {
+                  setAlter(personality.name);
+                  setAlterID(personality.id);
+                }} >{personality.name}</DropdownItem>)
               })}
             </DropdownButton>
           </li>
@@ -57,7 +61,7 @@ function App() {
           <UnderConstruction />
         </Route>
         <Route path="/profile">
-          <ProfilePage profile={profile}/>
+          <ProfilePage alterID={alterID} currentAlter={alter} profile={profile}/>
         </Route>
       </Switch>
     </div>
