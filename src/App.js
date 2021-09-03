@@ -1,5 +1,5 @@
 // import Header from './components/Header';
-import {profile} from './data/temp data';
+import {profile, tweets} from './data/temp data';
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import ProfilePage from './components/Profile';
@@ -7,12 +7,14 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { useState } from 'react';
 import { DropdownButton } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import Home from './components/Home';
 
 
 function App() {
 
   const [alter, setAlter] = useState(profile.alters[0].name);
   const [alterID, setAlterID] = useState(profile.alters[0].id);
+  const [tweetList, setTweetList] = useState(tweets);
 
   return (
     <Router>
@@ -52,7 +54,7 @@ function App() {
       <div className='seperator'></div>
       <Switch>
         <Route exact path="/">
-          <UnderConstruction />
+          <Home tweets={tweetList}/>
         </Route>
         <Route path="/about">
           <Hello />
