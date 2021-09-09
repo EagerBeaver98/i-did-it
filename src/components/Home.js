@@ -4,11 +4,9 @@ import Post from "./Post";
 function Home(props) {
   return (
     <div className="posts">
-      {() => {
-        for (let post of props.tweets) {
-          <Post post={post}/>
-        }
-      }}
+      {props.tweets.map((post) => {
+        return <Post key={post.tweetID} post={post} />
+      })}
     </div>
   )
 }
