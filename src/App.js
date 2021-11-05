@@ -14,6 +14,7 @@ function App() {
 
   const [alter, setAlter] = useState(profile.alters[0].name);
   const [alterID, setAlterID] = useState(profile.alters[0].id);
+  const [state, setstate] = useState({profile: profile})
 
   return (
     <Router>
@@ -62,10 +63,10 @@ function App() {
           <UnderConstruction />
         </Route>
         <Route path="/profile">
-          <ProfilePage alterID={alterID} currentAlter={alter} profile={profile}/>
+          <ProfilePage alterID={alterID} currentAlter={alter} profile={state.profile}/>
         </Route>
         <Route path="/add_alter">
-          <AddAlter profile={profile} />
+          <AddAlter profile={state.profile} />
         </Route>
       </Switch>
     </div>
