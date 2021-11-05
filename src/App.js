@@ -65,7 +65,7 @@ function App() {
           <ProfilePage alterID={alterID} currentAlter={alter} profile={profile}/>
         </Route>
         <Route path="/add_alter">
-          <AddAlter />
+          <AddAlter profile={profile} />
         </Route>
       </Switch>
     </div>
