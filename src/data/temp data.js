@@ -1,7 +1,8 @@
-const profile = {id: 1, name: "Winniebean", alters: [{id: 1, name: "Winnie"}, {id: 2, name: "Drew"}, {id: 3, name: "Rosie"},
+const profile = {id: 1, email: "test@test.com", password_digest: "password", name: "Winniebean", alters: [{id: 1, name: "Winnie"}, {id: 2, name: "Drew"}, {id: 3, name: "Rosie"},
 {id: 4, name: "Dalilah"}, {id: 5, name: "Louise"}, {id: 6, name: "Simon"}, {id: 7, name: "Jennifer"}]};
 
-const tweets = [{
+const tweets = [
+  {
   tweet: "I'm Drew",
   profileID: 1,
   alterID: 2},

@@ -3,6 +3,7 @@ import {profile} from './data/temp data';
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import ProfilePage from './components/Profile';
+import AddAlter from './components/AddAlter';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { useState } from 'react';
 import { DropdownButton } from 'react-bootstrap';
@@ -62,6 +63,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <ProfilePage alterID={alterID} currentAlter={alter} profile={profile}/>
+        </Route>
+        <Route path="/add_alter">
+          <AddAlter />
         </Route>
       </Switch>
     </div>
