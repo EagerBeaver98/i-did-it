@@ -10,7 +10,7 @@ const profile = {
   {id: 5, name: "Louise", gender: "Female", active: true}, 
   {id: 6, name: "Simon", gender: "Male", active: true}, 
   {id: 7, name: "Jennifer", gender: "Female", active: true}],
-  addAlter: (alter) => {
+  addAlter: function (alter) {
     this.alters.push({id: this.alters.length + 1, name: alter.name, gender: alter.gender, active: true})
   }
 };
