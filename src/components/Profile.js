@@ -8,7 +8,7 @@ function Profile(props) {
     <p>Profile ID: {props.profile.id}</p>
     <p>Current alter ID: {props.alterID}</p>
     <p>Current alter: {props.currentAlter}</p>
-    <Link to="/add_alter">
+    <Link to={`/add_alter/:${props.profile.id}`}>
     <Button>New Alter</Button>
     </Link>
     {props.profile.alters.map((personality) => {

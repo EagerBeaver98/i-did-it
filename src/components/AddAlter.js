@@ -12,6 +12,7 @@ function AddAlter(props) {
   function handleSubmit(event) {
     event.preventDefault();
     props.profile.addAlter(newAlter);
+    
   }
 
   return(

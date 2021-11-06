@@ -4,7 +4,7 @@ import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import ProfilePage from './components/Profile';
 import AddAlter from './components/AddAlter';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link, useHistory} from 'react-router-dom';
 import { useState } from 'react';
 import { DropdownButton } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
@@ -13,6 +13,8 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 function App() {
 
   const [state, setState] = useState({profile: profile, alter: profile.alters[0].name, alterID: profile.alters[0].id})
+
+  let history = useHistory();
 
   return (
     <Router>
@@ -43,7 +45,7 @@ function App() {
             </DropdownButton>
           </li>
           <li>
-            <Link to="/profile">{profile.name}</Link>
+            <Link to={`/profile/:${state.profile.id}`} >{profile.name}</Link>
           </li>
         </ul>
       </div>
@@ -59,10 +61,10 @@ function App() {
         <Route path="/forum">
           <UnderConstruction />
         </Route>
-        <Route path="/profile">
+        <Route path="/profile/:profileID">
           <ProfilePage alterID={state.alterID} currentAlter={state.alter} profile={state.profile}/>
         </Route>
-        <Route path="/add_alter">
+        <Route path="/add_alter/:profileID">
           <AddAlter profile={state.profile} />
         </Route>
       </Switch>
