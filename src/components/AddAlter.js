@@ -14,7 +14,7 @@ function AddAlter(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.profile.addAlter(newAlter);
+    props.state.profile.addAlter(newAlter);
     history.goBack();
     
   }
