@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function AddAlter(props) {
 
-  const [newAlter, setNewAlter] = useState({name: "Name", age: 0, gender: "Gender"});
+  const [newAlter, setNewAlter] = useState({name: "", age: 0, gender: ""});
 
   function handleChange(event) {
     setNewAlter({...newAlter, [event.target.name]: event.target.value});
@@ -16,9 +16,15 @@ function AddAlter(props) {
 
   return(
   <form className="newAlterForm" onSubmit={handleSubmit}>
+    <label>Name:
     <input type="text" name="name" value={newAlter.name} onChange={handleChange}></input>
+    </label>
+    <label>Age:
     <input type="number" name="age" value={newAlter.age} onChange={handleChange}></input>
+    </label>
+    <label>Gender:
     <input type="text" name="gender" value={newAlter.gender} onChange={handleChange}></input>
+    </label>
     <input type="submit" value="Submit"></input>
   </form>
   )
