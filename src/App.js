@@ -4,7 +4,7 @@ import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import ProfilePage from './components/Profile';
 import AddAlter from './components/AddAlter';
-import {BrowserRouter as Router, Route, Switch, Link, useHistory} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { useState } from 'react';
 import { DropdownButton } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
@@ -13,8 +13,6 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 function App() {
 
   const [state, setState] = useState({profile: profile, alter: profile.alters[0].name, alterID: profile.alters[0].id})
-
-  let history = useHistory();
 
   return (
     <Router>

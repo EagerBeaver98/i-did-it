@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
 
 function AddAlter(props) {
 
   const [newAlter, setNewAlter] = useState({name: "", age: 0, gender: ""});
+
+  const history = useHistory();
 
   function handleChange(event) {
     setNewAlter({...newAlter, [event.target.name]: event.target.value});
@@ -12,6 +15,7 @@ function AddAlter(props) {
   function handleSubmit(event) {
     event.preventDefault();
     props.profile.addAlter(newAlter);
+    history.goBack();
     
   }
 
