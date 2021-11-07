@@ -1,7 +1,11 @@
 function dateFormat(utcCode) {
-  var month = new Date(utcCode);
+  var date = new Date(utcCode);
 
-  return month.toLocaleString('default', {month: "short"});
+  const month = date.toLocaleString('default', {month: "short"});
+  const day = date.toLocaleString('default', {day: "numeric"})
+  const year = date.toLocaleString('default', {year: "numeric"})
+
+  return (day + " " + month + " " + year);
 }
 
 function Post(props) {
