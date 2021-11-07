@@ -13,7 +13,7 @@ import Home from './components/Home';
 
 function App() {
 
-  const [state, setState] = useState({profile: profile, alter: profile.alters[0].name, alterID: profile.alters[0].id})
+  const [state, setState] = useState({profile: profile, alter: profile.alters[0].name, alterID: profile.alters[0].id, tweetList: tweets})
 
   return (
     <Router>
@@ -52,7 +52,7 @@ function App() {
       <div className='seperator'></div>
       <Switch>
         <Route exact path="/">
-          <Home tweets={tweetList}/>
+          <Home tweets={state.tweetList}/>
         </Route>
         <Route path="/about">
           <Hello />
