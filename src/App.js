@@ -3,6 +3,7 @@ import {profile, tweets} from './data/temp data';
 import Hello from './components/HelloWorld';
 import UnderConstruction from './components/UnderConstruction';
 import ProfilePage from './components/Profile';
+import AddAlter from './components/AddAlter';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { useState } from 'react';
 import { DropdownButton } from 'react-bootstrap';
@@ -12,9 +13,7 @@ import Home from './components/Home';
 
 function App() {
 
-  const [alter, setAlter] = useState(profile.alters[0].name);
-  const [alterID, setAlterID] = useState(profile.alters[0].id);
-  const [tweetList, setTweetList] = useState(tweets);
+  const [state, setState] = useState({profile: profile, alter: profile.alters[0].name, alterID: profile.alters[0].id, tweetList: tweets})
 
   return (
     <Router>
@@ -36,17 +35,16 @@ function App() {
       <div className="Profile">
         <ul className="Alters">
           <li>
-            <DropdownButton id="alter-dropdown" title={alter}>
-              {profile.alters.map(function(personality) {
+            <DropdownButton id="alter-dropdown" title={state.alter}>
+              {state.profile.alters.map(function(personality) {
                 return (<DropdownItem key={personality.id} onClick={() => {
-                  setAlter(personality.name);
-                  setAlterID(personality.id);
+                  setState({...state, alter: personality.name, alterID: personality.id});
                 }} >{personality.name}</DropdownItem>)
               })}
             </DropdownButton>
           </li>
           <li>
-            <Link to="/profile">{profile.name}</Link>
+            <Link to={`/profile/:${state.profile.id}`} >{profile.name}</Link>
           </li>
         </ul>
       </div>
@@ -54,7 +52,7 @@ function App() {
       <div className='seperator'></div>
       <Switch>
         <Route exact path="/">
-          <Home tweets={tweetList}/>
+          <Home tweets={state.tweetList}/>
         </Route>
         <Route path="/about">
           <Hello />
@@ -62,8 +60,11 @@ function App() {
         <Route path="/forum">
           <UnderConstruction />
         </Route>
-        <Route path="/profile">
-          <ProfilePage alterID={alterID} currentAlter={alter} profile={profile}/>
+        <Route path="/profile/:profileID">
+          <ProfilePage alterID={state.alterID} currentAlter={state.alter} profile={state.profile}/>
+        </Route>
+        <Route path="/add_alter/:profileID">
+          <AddAlter state={state} setState={setState} />
         </Route>
       </Switch>
     </div>
