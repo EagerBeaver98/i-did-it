@@ -35,7 +35,7 @@ function App() {
         <ul className="Alters">
           <li>
             <DropdownButton id="alter-dropdown" title={state.alter}>
-              {profile.alters.map(function(personality) {
+              {state.profile.alters.map(function(personality) {
                 return (<DropdownItem key={personality.id} onClick={() => {
                   setState({...state, alter: personality.name, alterID: personality.id});
                 }} >{personality.name}</DropdownItem>)

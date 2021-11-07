@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 
 function AddAlter(props) {
 
-  const [newAlter, setNewAlter] = useState({name: "", age: 0, gender: ""});
+  const [newAlter, setNewAlter] = useState({id: props.state.profile.alters.length + 1, name: "", age: 0, gender: "", active: true});
 
   const history = useHistory();
 
@@ -14,7 +14,7 @@ function AddAlter(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.state.profile.addAlter(newAlter);
+    props.setState({...props.state, profile: {...props.state.profile, alters: [...props.state.profile.alters, newAlter]}});
     history.goBack();
     
   }
