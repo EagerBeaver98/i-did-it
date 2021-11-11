@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { DropdownButton } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Home from './components/Home';
+import Diary from './components/Diary';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
           </li>
           <li>
             <Link to="/forum">Forum</Link>
+          </li>
+          <li>
+            <Link to="/diary">Diary</Link>
           </li>
         </ul>
       </nav>
@@ -65,6 +69,9 @@ function App() {
         </Route>
         <Route path="/add_alter/:profileID">
           <AddAlter state={state} setState={setState} />
+        </Route>
+        <Route path="/diary">
+          <Diary state={state}/>
         </Route>
       </Switch>
     </div>

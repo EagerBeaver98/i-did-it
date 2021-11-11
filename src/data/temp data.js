@@ -12,6 +12,11 @@ const profile = {
   {id: 7, name: "Jennifer", gender: "Female", active: true}]
 };
 
+const diaries = [
+  {id: 1, alterID: 1, alterName: "Winnie", userID: 1, entry: "Today I am Winnie.", datetime: 1630442027288}, 
+  {id: 2, alterID: 2, alterName: "Drew", userID: 1, entry: "Now I am Drew.", datetime: 1630442066400},
+];
+
 const tweets = [
   {
     tweet: "I'm Drew",
@@ -39,4 +44,4 @@ const tweets = [
   }
 ];
 
-export {profile, tweets};
+export {profile, tweets, diaries};

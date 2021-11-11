@@ -1,3 +1,5 @@
+import React from "react";
+
 function dateFormat(utcCode) {
   var date = new Date(utcCode);
 
