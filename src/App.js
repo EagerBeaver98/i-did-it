@@ -15,6 +15,15 @@ import Diary from './components/Diary';
 function App() {
 
   const [state, setState] = useState({profile: profile, alter: profile.alters[0].name, alterID: profile.alters[0].id, tweetList: tweets})
+  function dateFormat(utcCode) {
+    var date = new Date(utcCode);
+  
+    const month = date.toLocaleString('default', {month: "short"});
+    const day = date.toLocaleString('default', {day: "numeric"})
+    const year = date.toLocaleString('default', {year: "numeric"})
+  
+    return (day + " " + month + " " + year);
+  }
 
   return (
     <Router>
@@ -56,7 +65,7 @@ function App() {
       <div className='seperator'></div>
       <Switch>
         <Route exact path="/">
-          <Home tweets={state.tweetList}/>
+          <Home dateFormat={dateFormat} tweets={state.tweetList}/>
         </Route>
         <Route path="/about">
           <Hello />
@@ -71,7 +80,7 @@ function App() {
           <AddAlter state={state} setState={setState} />
         </Route>
         <Route path="/diary">
-          <Diary state={state}/>
+          <Diary dateFormat={dateFormat} state={state}/>
         </Route>
       </Switch>
     </div>
