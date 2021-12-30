@@ -6,7 +6,7 @@ function Home(props) {
   return (
     <div className="posts">
       {props.tweets.map((post) => {
-        return <Post key={post.tweetID} post={post} />
+        return <Post key={post.tweetID} post={post} dateFormat={props.dateFormat} />
       })}
     </div>
   )
