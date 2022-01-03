@@ -4,6 +4,6 @@ function listAlterNames(alters) {
     list.push(alter.name);
   }
   return list;
-};
+}
 
-export {listAlterNames};
+export { listAlterNames };
