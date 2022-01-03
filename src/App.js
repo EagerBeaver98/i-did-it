@@ -80,7 +80,7 @@ function App() {
           <AddAlter state={state} setState={setState} />
         </Route>
         <Route path="/diary">
-          <Diary dateFormat={dateFormat} state={state}/>
+          <Diary dateFormat={dateFormat} alterID={state.alterID} alter={state.alter} profile={state.profile}/>
         </Route>
       </Switch>
     </div>
