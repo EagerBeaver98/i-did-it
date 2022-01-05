@@ -38,13 +38,14 @@ function App() {
           tweetID: getNewIDNum(state.tweetList),
           tweet: post,
           alterID: state.alterID,
-          alterName: state.alterName,
+          alterName: state.alter,
           profileID: state.profile.id,
           profileName: state.profile.name,
           datetime: Date.now(),
         },
       ],
     });
+    console.log(state)
   }
 
   return (

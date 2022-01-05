@@ -40,6 +40,7 @@ const tweets = [
     profileID: 1,
     profileName: "Winniebean",
     alterID: 2,
+    alterName: "Drew",
     datetime: 1630442027288,
   },
   {
@@ -48,6 +49,7 @@ const tweets = [
     profileID: 1,
     profileName: "Winniebean",
     alterID: 1,
+    alterName: "Winnie",
     datetime: 1630442066400,
   },
   {
@@ -56,6 +58,7 @@ const tweets = [
     profileID: 1,
     profileName: "Winniebean",
     alterID: 3,
+    alterName: "Rosie",
     datetime: 1630442133625,
   },
 ];
