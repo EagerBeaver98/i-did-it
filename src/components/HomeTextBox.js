@@ -6,6 +6,7 @@ export default function HomeTextBox(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.addPost(state.value);
+    props.setTextBoxStatus({showTextBox: false});
   };
 
   const handleChange = (event) => {

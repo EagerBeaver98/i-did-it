@@ -10,8 +10,8 @@ function Home(props) {
     if (state.showTextBox) {
       return (
         <HomeTextBox
-          diaries={state.diaries}
           addPost={props.newPost}
+          setTextBoxStatus={setState}
         ></HomeTextBox>
       );
     } else {
