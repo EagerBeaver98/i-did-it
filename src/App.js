@@ -10,6 +10,7 @@ import { DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import Home from "./components/Home";
 import Diary from "./components/Diary";
+import getNewIDNum from "./helpers/arrayIDNumWriter";
 
 function App() {
   const [state, setState] = useState({
@@ -29,7 +30,7 @@ function App() {
   }
 
   function newPost(post) {
-    setState({...state, tweetList: [...state.tweetList, post]})
+    setState({...state, tweetList: [...state.tweetList, {tweetID: getNewIDNum(state.tweetList), tweet: post, alterID: state.alterID, alterName: state.alterName, profileID: state.profile.id, profileName: state.profile.name, datetime: Date.now()}]})
   }
 
   return (

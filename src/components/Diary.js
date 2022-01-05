@@ -2,14 +2,12 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { diaries } from "../data/temp data";
 import DiaryTextBox from "./DiaryTextBox";
+import getNewIDNum from "../helpers/arrayIDNumWriter";
 
 export default function Diary(props) {
   const [state, setState] = useState({ diaries: diaries, showTextBox: false });
 
-  const getNewIDNum = () => {
-    const newID = state.diaries.at(-1).id + 1;
-    return newID;
-  };
+  
 
   const addDiary = (entry) => {
     setState({
@@ -17,7 +15,7 @@ export default function Diary(props) {
       diaries: [
         ...state.diaries,
         {
-          id: getNewIDNum(),
+          id: getNewIDNum(state.diaries),
           entry: entry,
           alterID: props.alterID,
           alterName: props.alter,
