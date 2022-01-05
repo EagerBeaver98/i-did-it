@@ -28,6 +28,10 @@ function App() {
     return day + " " + month + " " + year;
   }
 
+  function newPost(post) {
+    setState({...state, tweetList: [...state.tweetList, post]})
+  }
+
   return (
     <Router>
       <div className="App">
@@ -79,7 +83,7 @@ function App() {
         <div className="seperator"></div>
         <Switch>
           <Route exact path="/">
-            <Home dateFormat={dateFormat} tweets={state.tweetList} />
+            <Home dateFormat={dateFormat} tweets={state.tweetList} newPost={newPost} />
           </Route>
           <Route path="/about">
             <Hello />

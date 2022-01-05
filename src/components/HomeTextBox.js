@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-export default function TextBox(props) {
+export default function HomeTextBox(props) {
   const [state, setState] = useState({ value: "" });
 
   const handleSubmit = (event) => {

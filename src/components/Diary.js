@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { diaries } from "../data/temp data";
-import TextBox from "./TextBox";
+import DiaryTextBox from "./DiaryTextBox";
 
 export default function Diary(props) {
   const [state, setState] = useState({ diaries: diaries, showTextBox: false });
@@ -30,7 +30,7 @@ export default function Diary(props) {
 
   const textBoxHandler = () => {
     if (state.showTextBox) {
-      return <TextBox diaries={state.diaries} addDiary={addDiary}></TextBox>;
+      return <DiaryTextBox diaries={state.diaries} addDiary={addDiary}></DiaryTextBox>;
     } else {
       return (
         <Button id="newDiary" onClick={buttonHandler}>
