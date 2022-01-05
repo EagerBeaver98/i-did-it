@@ -7,8 +7,6 @@ import getNewIDNum from "../helpers/arrayIDNumWriter";
 export default function Diary(props) {
   const [state, setState] = useState({ diaries: diaries, showTextBox: false });
 
-  
-
   const addDiary = (entry) => {
     setState({
       showTextBox: false,
@@ -28,7 +26,12 @@ export default function Diary(props) {
 
   const textBoxHandler = () => {
     if (state.showTextBox) {
-      return <DiaryTextBox diaries={state.diaries} addDiary={addDiary}></DiaryTextBox>;
+      return (
+        <DiaryTextBox
+          diaries={state.diaries}
+          addDiary={addDiary}
+        ></DiaryTextBox>
+      );
     } else {
       return (
         <Button id="newDiary" onClick={buttonHandler}>

@@ -1,14 +1,19 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import Post from "./Post";
-import {Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import HomeTextBox from "./HomeTextBox";
 
 function Home(props) {
-  const [state, setState] = useState({showTextBox: false})
-  
+  const [state, setState] = useState({ showTextBox: false });
+
   const textBoxHandler = () => {
     if (state.showTextBox) {
-      return <HomeTextBox diaries={state.diaries} addPost={props.newPost}></HomeTextBox>;
+      return (
+        <HomeTextBox
+          diaries={state.diaries}
+          addPost={props.newPost}
+        ></HomeTextBox>
+      );
     } else {
       return (
         <Button id="newPost" onClick={buttonHandler}>

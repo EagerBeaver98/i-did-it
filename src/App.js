@@ -30,7 +30,21 @@ function App() {
   }
 
   function newPost(post) {
-    setState({...state, tweetList: [...state.tweetList, {tweetID: getNewIDNum(state.tweetList), tweet: post, alterID: state.alterID, alterName: state.alterName, profileID: state.profile.id, profileName: state.profile.name, datetime: Date.now()}]})
+    setState({
+      ...state,
+      tweetList: [
+        ...state.tweetList,
+        {
+          tweetID: getNewIDNum(state.tweetList),
+          tweet: post,
+          alterID: state.alterID,
+          alterName: state.alterName,
+          profileID: state.profile.id,
+          profileName: state.profile.name,
+          datetime: Date.now(),
+        },
+      ],
+    });
   }
 
   return (
@@ -84,7 +98,11 @@ function App() {
         <div className="seperator"></div>
         <Switch>
           <Route exact path="/">
-            <Home dateFormat={dateFormat} tweets={state.tweetList} newPost={newPost} />
+            <Home
+              dateFormat={dateFormat}
+              tweets={state.tweetList}
+              newPost={newPost}
+            />
           </Route>
           <Route path="/about">
             <Hello />
