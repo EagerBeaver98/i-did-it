@@ -10,6 +10,7 @@ import { DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import Home from "./components/Home";
 import Diary from "./components/Diary";
+import getNewIDNum from "./helpers/arrayIDNumWriter";
 
 function App() {
   const [state, setState] = useState({
@@ -26,6 +27,24 @@ function App() {
     const year = date.toLocaleString("default", { year: "numeric" });
 
     return day + " " + month + " " + year;
+  }
+
+  function newPost(post) {
+    setState({
+      ...state,
+      tweetList: [
+        ...state.tweetList,
+        {
+          tweetID: getNewIDNum(state.tweetList),
+          tweet: post,
+          alterID: state.alterID,
+          alterName: state.alter,
+          profileID: state.profile.id,
+          profileName: state.profile.name,
+          datetime: Date.now(),
+        },
+      ],
+    });
   }
 
   return (
@@ -79,7 +98,11 @@ function App() {
         <div className="seperator"></div>
         <Switch>
           <Route exact path="/">
-            <Home dateFormat={dateFormat} tweets={state.tweetList} />
+            <Home
+              dateFormat={dateFormat}
+              tweets={state.tweetList}
+              newPost={newPost}
+            />
           </Route>
           <Route path="/about">
             <Hello />

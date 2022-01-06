@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-export default function TextBox(props) {
+export default function DiaryTextBox(props) {
   const [state, setState] = useState({ value: "" });
 
   const handleSubmit = (event) => {
