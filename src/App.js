@@ -72,20 +72,24 @@ function App() {
               <li>
                 <DropdownButton id="alter-dropdown" title={state.alter}>
                   {state.profile.alters.map(function (personality) {
-                    return (
-                      <DropdownItem
-                        key={personality.id}
-                        onClick={() => {
-                          setState({
-                            ...state,
-                            alter: personality.name,
-                            alterID: personality.id,
-                          });
-                        }}
-                      >
-                        {personality.name}
-                      </DropdownItem>
-                    );
+                    if (personality.active) {
+                      return (
+                        <DropdownItem
+                          key={personality.id}
+                          onClick={() => {
+                            setState({
+                              ...state,
+                              alter: personality.name,
+                              alterID: personality.id,
+                            });
+                          }}
+                        >
+                          {personality.name}
+                        </DropdownItem>
+                      );
+                    } else {
+                      return (<div></div>)
+                    }
                   })}
                 </DropdownButton>
               </li>
